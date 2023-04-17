@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Pres_InventoryTransactions",
+    "pageId": "Unit History",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Unit History_Pres_InventoryTransactions",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7aaede2b802c99ee1f3"
+}

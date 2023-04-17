@@ -1,0 +1,62 @@
+{
+  "pages": [
+    {
+      "id": "Bulk Export",
+      "isDefault": false
+    },
+    {
+      "id": "Unit History",
+      "isDefault": true
+    },
+    {
+      "id": "Stock Movements",
+      "isDefault": false
+    },
+    {
+      "id": "Stock on Hand",
+      "isDefault": false
+    },
+    {
+      "id": "Stock on Hand Detail",
+      "isDefault": false
+    },
+    {
+      "id": "Operations Report",
+      "isDefault": false
+    },
+    {
+      "id": "Operations Report Detail",
+      "isDefault": false
+    },
+    {
+      "id": "Warehouse Bins",
+      "isDefault": false
+    },
+    {
+      "id": "Order Report",
+      "isDefault": false
+    },
+    {
+      "id": "Order Report Detail",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "clonedFromApplicationId": "641baa19ede2b802c99ebd5f",
+  "color": "#EAEDFB",
+  "icon": "location",
+  "unpublishedAppLayout": {
+    "type": "FLUID"
+  },
+  "publishedAppLayout": {
+    "type": "FLUID"
+  },
+  "unpublishedCustomJSLibs": [],
+  "publishedCustomJSLibs": [],
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "isManualUpdate": false,
+  "deleted": false
+}

@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "EXPORT",
+    "pageId": "Stock Movements",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Stock Movements_EXPORT",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_6420d7ecede2b802c99f4c0a"
+}

@@ -1,0 +1,7 @@
+query ($regex:StringHashFilter_StringRegExpFilter) {
+  queryMaterialSubLot (filter: {code: $regex} ) {
+    id
+    code
+    
+  }
+}

@@ -1,0 +1,6 @@
+query{
+	queryRequestState{
+		label:name
+		value:id
+	}
+}

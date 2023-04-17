@@ -1,0 +1,10 @@
+query {
+  queryEquipment(
+    filter: {
+      equipmentLevel: {eq: Warehouse}
+    }
+	){
+    label: name
+		value: id
+  }
+}

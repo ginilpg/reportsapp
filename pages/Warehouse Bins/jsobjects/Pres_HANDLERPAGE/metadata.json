@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Pres_HANDLERPAGE",
+    "pageId": "Warehouse Bins",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Warehouse Bins_Pres_HANDLERPAGE",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_64226f62ede2b802c99ff2bf"
+}

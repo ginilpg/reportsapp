@@ -1,0 +1,31 @@
+query($filter: StockOnHandFilter!, $first: Int, $offset: Int) {
+  getStockOnHand(filter: $filter, first: $first, offset: $offset) {
+    material {
+      code
+      description
+      materialClass {
+        code
+      }
+      inventoryHoldingPolicy {
+        inventoryMin
+        inventoryMax
+      }
+      inventoryHandlingPolicy {
+        trackBySerialNumber
+      }
+    }
+    status {
+      code
+    }
+    quantity
+    storageLocation {
+      name
+    }
+    carrier {
+      code
+    }
+    materialSubLot {
+      code
+    }
+  }
+}

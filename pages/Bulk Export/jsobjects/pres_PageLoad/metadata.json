@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "pres_PageLoad",
+    "pageId": "Bulk Export",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Bulk Export_pres_PageLoad",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641d13b9ede2b802c99efcb4"
+}

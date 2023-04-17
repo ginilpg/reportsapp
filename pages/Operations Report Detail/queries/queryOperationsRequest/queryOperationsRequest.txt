@@ -1,0 +1,40 @@
+query($opReqFilter: OperationsRequestFilter!, $jobOrderFilter:JobOrderFilter, $requestStateFilter:RequestStateFilter){
+  queryOperationsRequest(first:20, filter:$opReqFilter) @cascade(fields:["requestState"]){
+    code
+    orderType
+		createdDateTime
+		equipment{
+			name
+		}
+		customer{
+			name
+			id
+		}
+		requestState(filter:$requestStateFilter){
+			name
+		}
+		operationsDefinition{
+      name
+    }
+    segmentRequirements {
+			code
+    	jobOrders(filter:$jobOrderFilter){
+        name
+        dispatchStatus
+        name
+        equipment{
+					name
+				}
+				createdDateTime
+        jobResponses{ 
+          startDateTime
+          endDateTime
+        }
+      }
+    }
+		properties{
+      name
+      value
+    }
+  }
+}

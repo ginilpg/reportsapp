@@ -1,0 +1,17 @@
+query ($input:ID!) {
+  getEquipment(id:$input){
+    id
+		name
+		label      
+    carriers{
+			id
+      code
+      status{code}
+      owner{name}
+      contents{
+        material{code}
+        quantity
+      }
+    }
+  }
+}

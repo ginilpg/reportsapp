@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "adp_QueryGeneric",
+    "pageId": "Bulk Export",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Bulk Export_adp_QueryGeneric",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641d18a9ede2b802c99efe6d"
+}

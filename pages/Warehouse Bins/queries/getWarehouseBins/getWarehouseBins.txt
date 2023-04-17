@@ -1,0 +1,15 @@
+query ($input:ID!) {
+  getEquipment(id:$input){
+    id
+		name
+		label
+		children{
+			id
+			name
+			label      
+			carriersAggregate{
+        count
+      }
+		}
+  }
+}

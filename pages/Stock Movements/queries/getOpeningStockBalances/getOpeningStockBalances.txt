@@ -1,0 +1,21 @@
+query($variables: StockOnHandFilter!) {
+  getStockOnHand(
+		filter: $variables
+	) {
+    material { code, description }
+    status{ code }
+    quantity
+		materialSubLot{
+			code
+		}
+		jobResponse{
+      jobOrder{
+        segmentRequirement{
+          operationsRequest{
+            code
+          }
+        }
+      }
+    }
+  }
+}

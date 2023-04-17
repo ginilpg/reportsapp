@@ -1,0 +1,32 @@
+query($filter: InventoryTransactionsRawFilter!) {
+  getInventoryTransactionsRaw(
+		filter: $filter
+	) {
+		jobResponse{
+      id
+    }
+		timestamp,
+    material { 
+			code, 
+			description,
+		}
+		materialUse
+    status{ 
+			code
+		}
+    carrier{
+      code
+    }
+    materialSubLot{
+      code
+    }
+		storageLocation{
+      name
+    }
+    quantity
+    shipment{
+      id
+      consignmentNumber
+    }
+  }
+}

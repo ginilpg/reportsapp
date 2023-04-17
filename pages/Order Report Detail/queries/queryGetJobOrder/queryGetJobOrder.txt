@@ -1,0 +1,46 @@
+query ($name:String) {
+  getJobOrder(name:$name){
+    name
+    dispatchStatus
+    createdDateTime
+    jobResponses{
+			id
+      startDateTime
+      endDateTime
+			personnelActual{
+        person{
+          name
+        }
+      }
+    }
+    equipment{
+      name
+    }
+    segmentRequirement{
+      code
+      materialRequirements{
+        material{
+          code
+					description
+					materialClass{
+						code
+						description
+					}
+        }
+        quantity
+      }
+      operationsRequest{
+        code
+      }
+    }
+    
+    personnelRequirements{
+      id
+      quantity
+      person{
+        name
+      }
+    }
+    
+  }
+}

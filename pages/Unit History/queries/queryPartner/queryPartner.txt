@@ -1,0 +1,11 @@
+query($input:[String]) {
+	queryPartner(
+		filter: {
+			isCustomer: true,
+			name: {in : $input}
+		}
+	) {
+    label: name
+		value: id
+	}
+}

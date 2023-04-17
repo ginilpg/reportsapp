@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Pres_Owner",
+    "pageId": "Operations Report Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Operations Report Detail_Pres_Owner",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7abede2b802c99ee4c7"
+}

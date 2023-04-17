@@ -1,0 +1,25 @@
+query($opReqFilter: OperationsRequestFilter!, $ownerFilter: PartnerFilter){
+  queryOperationsRequest(filter:$opReqFilter) @cascade(fields:["customer"]){
+    code
+    orderType
+		customer(filter:$ownerFilter){
+			name
+		}
+    segmentRequirements{
+			code
+    	jobOrders{
+        name
+        dispatchStatus
+        name
+        equipment{
+					name
+				}
+				createdDateTime
+        jobResponses{ 
+          startDateTime
+          endDateTime
+        }
+      }
+    }
+  }
+}

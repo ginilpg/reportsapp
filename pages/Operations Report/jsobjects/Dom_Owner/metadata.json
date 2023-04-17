@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Dom_Owner",
+    "pageId": "Operations Report",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Operations Report_Dom_Owner",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_64226a58ede2b802c99fdabf"
+}

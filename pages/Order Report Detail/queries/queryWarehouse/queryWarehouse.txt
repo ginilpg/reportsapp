@@ -1,0 +1,10 @@
+query {
+  queryEquipment(
+    filter: {
+      equipmentLevel: {eq: Warehouse}
+    }
+	) @cascade {
+    label: name
+		value: id
+  }
+}

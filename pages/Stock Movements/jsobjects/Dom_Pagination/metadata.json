@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Dom_Pagination",
+    "pageId": "Stock Movements",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Stock Movements_Dom_Pagination",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7abede2b802c99ee47d"
+}

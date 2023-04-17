@@ -1,0 +1,34 @@
+query ($serialNumbers: [ExtMaterialSubLotRef], $ownerId: ID!) {
+  getInventoryTransactionsRaw (
+		filter: {
+	    materialSubLot: $serialNumbers,
+			owner: { id: $ownerId },
+			filterReversed: true
+	  }
+	) {
+		materialSubLot { code }
+    material { code }
+    status { code }
+    storageLocation { name }
+    carrier { code }
+    jobResponse { 
+			id
+			jobOrder {
+      	segmentRequirement {
+        	operationsRequest {
+            id
+            code
+          }
+        }
+    	}
+		}
+    shipment { id }
+    shipmentItem { id }
+    owner { companyCode }
+    comment
+    reason
+    materialUse
+    timestamp
+		quantity
+  }
+}

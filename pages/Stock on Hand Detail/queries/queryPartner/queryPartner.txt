@@ -1,0 +1,6 @@
+query($partners: [String]) {
+  queryPartner(filter: { isCustomer: true, name: { in: $partners } }) @cascade {
+    label: name
+    value: id
+  }
+}

@@ -1,0 +1,21 @@
+query($customerId: [ID!], $warehouseNames: [String!]) {
+  queryMaterialDefinition @cascade(fields: ["inventoryHandlingPolicy"]) {
+    code
+    description
+    materialClass {
+      code
+    }
+    inventoryHandlingPolicy @cascade {
+			trackBySerialNumber
+      rules @cascade {
+        warehouse(filter: { name: { in: $warehouseNames } }) {
+					id
+          name
+        }
+        customer(filter: { id: $customerId }) {
+          id
+        }
+      }
+    }
+  }
+}

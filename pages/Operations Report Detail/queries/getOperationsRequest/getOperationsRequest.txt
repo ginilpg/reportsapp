@@ -1,0 +1,81 @@
+query($opReqCode: String!){
+  getOperationsRequest(code:$opReqCode){
+    code
+    orderType
+		createdDateTime
+		equipment{
+			name
+		}
+		customer{
+			name
+		}
+		requestState{
+			name
+		}
+		operationsDefinition{
+      name
+    }
+    segmentRequirements{
+			code
+    	jobOrders{
+        name
+        dispatchStatus
+        name
+        equipment{
+					name
+				}
+				createdDateTime
+        jobResponses{ 
+					id
+          startDateTime
+          endDateTime
+        }
+      }
+			materialRequirements{
+        material{
+          code
+					description
+					materialClass{
+						code
+						description
+					}
+        }
+        quantity
+	    }
+			
+      segment {
+        name
+        materialSpecifications {
+          quantity
+          material {
+            code
+            description
+            materialClass{
+              code
+            }
+          }
+        }
+      }
+			
+    }
+		properties{
+      name
+      value
+    }
+		
+		shipTo{
+      address{
+        name
+        number
+        street1
+        street2
+        city
+        postCode
+        state
+        countryCode        
+      }
+      attention
+      companyCode
+    }
+  }
+}

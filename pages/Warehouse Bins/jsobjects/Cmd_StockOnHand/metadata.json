@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Cmd_StockOnHand",
+    "pageId": "Warehouse Bins",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Warehouse Bins_Cmd_StockOnHand",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_64226f1dede2b802c99ff250"
+}

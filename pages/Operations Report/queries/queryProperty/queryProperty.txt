@@ -1,0 +1,6 @@
+query{
+  queryProperty {
+    name
+    value
+  }
+}

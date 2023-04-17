@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "cmd_StockMovements",
+    "pageId": "Bulk Export",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Bulk Export_cmd_StockMovements",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_6420e6a5ede2b802c99f5246"
+}

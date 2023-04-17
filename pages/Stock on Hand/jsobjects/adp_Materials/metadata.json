@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "adp_Materials",
+    "pageId": "Stock on Hand",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Stock on Hand_adp_Materials",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7abede2b802c99ee37c"
+}

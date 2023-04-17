@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "dom_StockOnHand",
+    "pageId": "Bulk Export",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Bulk Export_dom_StockOnHand",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641d19d3ede2b802c99efefa"
+}

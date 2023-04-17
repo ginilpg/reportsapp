@@ -1,0 +1,12 @@
+query($warehouse: EquipmentFilter, $owner: PartnerFilter) {
+  queryMaterialDefinition @cascade {
+    value: code
+    label: code
+    inventoryHandlingPolicy {
+      rules {
+        customer(filter: $owner) { id, name }
+        warehouse(filter: $warehouse) { id, name }
+      }
+    }
+  }
+}

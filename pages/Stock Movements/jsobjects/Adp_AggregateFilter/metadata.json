@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Adp_AggregateFilter",
+    "pageId": "Stock Movements",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Stock Movements_Adp_AggregateFilter",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7abede2b802c99ee43e"
+}

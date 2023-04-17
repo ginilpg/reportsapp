@@ -1,0 +1,8 @@
+mutation($input:[AddCarrierInput!]!){
+	addCarrier(input:$input){
+		carrier{
+			id
+			code
+		}
+	}
+}

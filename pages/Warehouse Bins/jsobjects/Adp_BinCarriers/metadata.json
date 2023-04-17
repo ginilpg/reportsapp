@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Adp_BinCarriers",
+    "pageId": "Warehouse Bins",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Warehouse Bins_Adp_BinCarriers",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_64226eddede2b802c99ff203"
+}

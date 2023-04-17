@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "cmd_FormatDecider",
+    "pageId": "Bulk Export",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Bulk Export_cmd_FormatDecider",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641d1a8cede2b802c99eff82"
+}

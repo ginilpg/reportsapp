@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Dom_Warehouse",
+    "pageId": "Warehouse Bins",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Warehouse Bins_Dom_Warehouse",
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_64226f54ede2b802c99ff2a9"
+}

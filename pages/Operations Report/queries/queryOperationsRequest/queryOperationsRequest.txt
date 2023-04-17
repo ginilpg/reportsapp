@@ -1,0 +1,46 @@
+query($opReqFilter: OperationsRequestFilter!, $ownerFilter: PartnerFilter, $jobOrderFilter:JobOrderFilter, $requestStateFilter:RequestStateFilter,
+$first:Int, $offset:Int, $attentionFilter: CompanyAddressFilter, $cascadeFields: [String!]!, $equipmentFilter:EquipmentFilter, $propertyFilter:PropertyFilter,$opReqOrder: OperationsRequestOrder){
+  queryOperationsRequest(first:$first, offset:$offset, filter:$opReqFilter, order:$opReqOrder) @cascade(
+		fields:$cascadeFields)
+	{
+    code
+    orderType
+		createdDateTime
+		equipment(filter:$equipmentFilter){
+			name
+		}
+		shipTo(filter:$attentionFilter) {
+      id
+      attention
+    }
+		customer(filter:$ownerFilter){
+			name
+		}
+		requestState(filter:$requestStateFilter){
+			name
+		}
+		operationsDefinition{
+      name
+    }
+    segmentRequirements {
+			code
+    	jobOrders(filter:$jobOrderFilter){
+        name
+        dispatchStatus
+        name
+        equipment{
+					name
+				}
+				createdDateTime
+        jobResponses{ 
+          startDateTime
+          endDateTime
+        }
+      }
+    }
+		properties (filter: $propertyFilter ) {
+			name
+			value
+		}
+  }
+}

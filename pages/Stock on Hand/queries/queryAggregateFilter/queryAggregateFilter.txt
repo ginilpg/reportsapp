@@ -1,0 +1,5 @@
+query($query: String!, $variables: String) {
+  aggregateFilteredQuery(query: $query, variables: $variables) {
+    Count
+  }
+}
