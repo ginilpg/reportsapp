@@ -1,0 +1,68 @@
+{
+  "unpublishedPage": {
+    "name": "Stock on Hand",
+    "slug": "stock-on-hand",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 820,
+          "containerStyle": "none",
+          "snapRows": 85,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 860,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Stock on Hand_pres_PageLoad.onPageLoad",
+              "name": "pres_PageLoad.onPageLoad",
+              "collectionId": "Stock on Hand_pres_PageLoad",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  return Promise.all([dom_Warehouse.refresh(), dom_Owner.refresh()]).catch(_err.showErr);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Stock on Hand_pres_Pagination.setPaginationDefaults",
+              "name": "pres_Pagination.setPaginationDefaults",
+              "collectionId": "Stock on Hand_pres_Pagination",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  return Promise.all([dom_Pagination.storePageNo(0), dom_Pagination.storePageSize(tblStockOnHand.pageSize)]);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Stock on Hand",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7a6ede2b802c99ede01"
+}

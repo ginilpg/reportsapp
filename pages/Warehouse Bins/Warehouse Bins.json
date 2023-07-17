@@ -1,0 +1,57 @@
+{
+  "unpublishedPage": {
+    "name": "Warehouse Bins",
+    "slug": "warehouse-bins",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 800,
+          "containerStyle": "none",
+          "snapRows": 98,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 1000,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Warehouse Bins_Pres_HANDLERPAGE.handle_OnPageLoad",
+              "name": "Pres_HANDLERPAGE.handle_OnPageLoad",
+              "collectionId": "Warehouse Bins_Pres_HANDLERPAGE",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  return Adp_Warehouse.refresh().then(() => showAlert(\"Page Load Successful\")).catch(_err.showErr);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Warehouse Bins",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_64226e20ede2b802c99ff1b5"
+}
