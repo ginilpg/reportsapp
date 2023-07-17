@@ -1,0 +1,57 @@
+{
+  "unpublishedPage": {
+    "name": "Bulk Export",
+    "slug": "bulk-export",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1010,
+          "containerStyle": "none",
+          "snapRows": 122,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 1240,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Bulk Export_pres_PageLoad.handleQueryLoad",
+              "name": "pres_PageLoad.handleQueryLoad",
+              "collectionId": "Bulk Export_pres_PageLoad",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const queryParams = appsmith.URL.queryParams;\n  if (_.isEmpty(queryParams)) return;\n  await storeValue(\"bulkLoading\", true, false);\n  await resetWidget(\"tblMassValues\");\n  const pageName = queryParams[\"pageName\"];\n  await storeValue(\"bulkReportPageName\", pageName, false);\n  if (pageName == \"StockMovements\") {\n    const payload = await appsmith.store[\"bulkExport/payload\"];\n    await cmd_StockMovements.handle_load(payload).catch(_err.showErr).finally(() => storeValue(\"bulkLoading\", false, false));\n    return;\n  }\n  const query = queryParams[\"query\"];\n  const filter = JSON.parse(queryParams[\"filter\"]);\n  return adp_QueryGeneric.refresh(query, filter).catch(_err.showErr).finally(() => storeValue(\"bulkLoading\", false, false));\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Bulk Export",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641d0496ede2b802c99ef610"
+}

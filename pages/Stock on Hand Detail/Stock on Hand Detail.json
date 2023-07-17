@@ -1,0 +1,57 @@
+{
+  "unpublishedPage": {
+    "name": "Stock on Hand Detail",
+    "slug": "stock-on-hand-detail",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 900,
+          "containerStyle": "none",
+          "snapRows": 85,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 860,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Stock on Hand Detail_pres_PageLoad.onPageLoad",
+              "name": "pres_PageLoad.onPageLoad",
+              "collectionId": "Stock on Hand Detail_pres_PageLoad",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  return Promise.all([dom_Warehouse.refresh(), dom_Owner.refresh(), dom_Pagination.storePageSize(tblStockOnHand.pageSize)]).then(() => Promise.all([pres_Material.refresh(), pres_PageLoad.autoLoad()])).catch(_err.showErr);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Stock on Hand Detail",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7a6ede2b802c99ede08"
+}

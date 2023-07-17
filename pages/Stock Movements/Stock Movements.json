@@ -1,0 +1,57 @@
+{
+  "unpublishedPage": {
+    "name": "Stock Movements",
+    "slug": "stock-movements",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1270,
+          "containerStyle": "none",
+          "snapRows": 124,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 1250,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Stock Movements_Pres_HANDLERPAGE.handle_OnPageLoad",
+              "name": "Pres_HANDLERPAGE.handle_OnPageLoad",
+              "collectionId": "Stock Movements_Pres_HANDLERPAGE",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "() => {\n  return Adp_Warehouse.refresh().then(() => Adp_Owner.refresh()).then(() => storeValue('isLoad', false)).then(() => showAlert(\"Page Load Successful\")).catch(_err.showErr);\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Stock Movements",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "641ce7a6ede2b802c99eddf3_641ce7a6ede2b802c99eddfe"
+}
