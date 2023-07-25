@@ -1,0 +1,149 @@
+{
+  "unpublishedPage": {
+    "name": "Dashboard",
+    "slug": "dashboard",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1220,
+          "containerStyle": "none",
+          "snapRows": 95,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 80,
+          "minHeight": 970,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Dashboard_getProductWarehouse",
+              "name": "getProductWarehouse",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "sel_product.selectedOptionValue ? sel_product.selectedOptionValue : 147"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Dashboard_getProducts",
+              "name": "getProducts",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Dashboard_getPurchaseOrders",
+              "name": "getPurchaseOrders",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Dashboard_getSuppliers",
+              "name": "getSuppliers",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Dashboard_getWarehouses",
+              "name": "getWarehouses",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Dashboard_utils.getPurchaseOrders",
+              "name": "utils.getPurchaseOrders",
+              "collectionId": "Dashboard_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const orders = await getPurchaseOrders.run();\n  const data = orders.map(o => {\n    return {\n      Id: o.id,\n      Supplier: o.name,\n      Warehouse: o.label,\n      OrderDate: new Date(o.order_date).toDateString(),\n      Status: o.status,\n      Tax: o.tax,\n      Address: o.address,\n      Products: o.total_product_count\n    };\n  });\n  const tenDaysAgo = moment().subtract(10, 'days');\n  if (orders) {\n    const filteredData = data.filter(o => moment(new Date(o.OrderDate)).isSameOrAfter(tenDaysAgo));\n    if (filteredData && filteredData.length > 0) {\n      return filteredData;\n    } else {\n      return data;\n    }\n  } else {\n    return [];\n  }\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Dashboard_utils.dashboardMetrics",
+              "name": "utils.dashboardMetrics",
+              "collectionId": "Dashboard_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const products = await getProducts.run();\n  const suppliers = await getSuppliers.run();\n  const purchaseOrders = await getPurchaseOrders.run();\n  return {\n    productCount: products.length,\n    lowStock: products.filter(p => p.total_stock < p.low_stock).length,\n    outOfStock: products.filter(p => p.total_stock < 1).length,\n    suppliers: suppliers.length,\n    stockValue: products.reduce((a, b) => a + b.price, 0) || 0,\n    unfulfilledPurchaseOrders: purchaseOrders.filter(p => p.status === 'UNFULFILLED').length,\n    fulfilledPurchaseOrders: purchaseOrders.filter(p => p.status === 'RECEIVED').length\n  };\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Dashboard_utils.getChartProducts",
+              "name": "utils.getChartProducts",
+              "collectionId": "Dashboard_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const products = await getProducts.run();\n  if (products) {\n    return products.map(p => {\n      return {\n        Id: p.id,\n        Name: p.name,\n        SalePrice: p.price,\n        CostPrice: p.cost,\n        Sku: p.sku,\n        Category: p.category,\n        LowStock: p.low_stock,\n        Image: p.image,\n        TotalStock: p.total_stock,\n        VariationId: p.product_variant_id,\n        Description: p.description\n      };\n    });\n  } else {\n    return [];\n  }\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Dashboard_utils.getProducts",
+              "name": "utils.getProducts",
+              "collectionId": "Dashboard_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const stockFilter = sel_stockLevel.selectedOptionValue;\n  const products = await getProducts.run();\n  let filteredProducts = products;\n  if (stockFilter === 'Low stock') {\n    filteredProducts = products.filter(p => p.total_stock && p.total_stock < p.low_stock && p.total_stock !== 0);\n  } else if (stockFilter === 'Out of stock') {\n    filteredProducts = products.filter(p => p.total_stock < 1);\n  }\n  return filteredProducts.map(p => ({\n    Id: p.id,\n    Name: p.name,\n    SalePrice: p.price,\n    CostPrice: p.cost,\n    Sku: p.sku,\n    Category: p.category,\n    LowStock: p.low_stock,\n    Image: p.image,\n    TotalStock: p.total_stock,\n    VariationId: p.product_variant_id,\n    Description: p.description\n  }));\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Dashboard_utils.productWarehouseChartData",
+              "name": "utils.productWarehouseChartData",
+              "collectionId": "Dashboard_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const productLocations = await getProductWarehouse.run();\n  if (sel_product) {\n    return productLocations.map(l => {\n      return {\n        Stock: l.stock,\n        Warehouse: l.label\n      };\n    });\n  } else {\n    return [];\n  }\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Dashboard",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "6422bd81c5f658261106244b_64bfb8abab30652c8fc88cde"
+}
