@@ -28,7 +28,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Stock on Hand Detail_pres_PageLoad.onPageLoad",
               "name": "pres_PageLoad.onPageLoad",
               "collectionId": "Stock on Hand Detail_pres_PageLoad",
               "confirmBeforeExecute": false,

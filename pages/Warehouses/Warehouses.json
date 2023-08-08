@@ -1,0 +1,57 @@
+{
+  "unpublishedPage": {
+    "name": "Warehouses",
+    "slug": "warehouses",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 770,
+          "containerStyle": "none",
+          "snapRows": 95,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 970,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Warehouses_utils.getAllWarehouses",
+              "name": "utils.getAllWarehouses",
+              "collectionId": "Warehouses_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const warehouseData = await getWarehouses.run();\n  return warehouseData.map(d => {\n    return {\n      Id: d.id,\n      Name: d.label,\n      Address: d.address,\n      Country: d.country,\n      State: d.state,\n      City: d.city,\n      Postcode: d.postal_code\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Warehouses",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "6422bd81c5f658261106244b_64bfb8abab30652c8fc88cdd"
+}

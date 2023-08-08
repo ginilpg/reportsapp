@@ -28,7 +28,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Stock Movements_Pres_HANDLERPAGE.handle_OnPageLoad",
               "name": "Pres_HANDLERPAGE.handle_OnPageLoad",
               "collectionId": "Stock Movements_Pres_HANDLERPAGE",
               "confirmBeforeExecute": false,

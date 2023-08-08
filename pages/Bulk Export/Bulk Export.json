@@ -28,7 +28,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Bulk Export_pres_PageLoad.handleQueryLoad",
               "name": "pres_PageLoad.handleQueryLoad",
               "collectionId": "Bulk Export_pres_PageLoad",
               "confirmBeforeExecute": false,

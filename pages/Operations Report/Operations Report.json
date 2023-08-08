@@ -29,7 +29,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Operations Report_Pres_HANDLERPAGE.handle_OnPageLoad",
               "name": "Pres_HANDLERPAGE.handle_OnPageLoad",
               "collectionId": "Operations Report_Pres_HANDLERPAGE",
               "confirmBeforeExecute": false,

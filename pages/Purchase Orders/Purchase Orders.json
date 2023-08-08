@@ -1,0 +1,90 @@
+{
+  "unpublishedPage": {
+    "name": "Purchase Orders",
+    "slug": "purchase-orders",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 790,
+          "containerStyle": "none",
+          "snapRows": 95,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 970,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Purchase Orders_getSupplier",
+              "name": "getSupplier",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "this.params.supplierId"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Purchase Orders_utils.getSuppliers",
+              "name": "utils.getSuppliers",
+              "collectionId": "Purchase Orders_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const suppliers = await getSuppliers.run();\n  if (suppliers) {\n    return suppliers.map(s => {\n      return {\n        Id: s.id,\n        Name: s.name,\n        Email: s.email,\n        Phone: s.phone\n      };\n    });\n  } else {\n    return [];\n  }\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Purchase Orders_getWarehouses",
+              "name": "getWarehouses",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Purchase Orders_utils.getPurchaseOrders",
+              "name": "utils.getPurchaseOrders",
+              "collectionId": "Purchase Orders_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const filter = sel_purchaseOrderStatus.selectedOptionValue;\n  console.log('FILTER:', filter);\n  const orders = await getPurchaseOrders.run();\n  let filteredProducts = orders;\n  if (filter === 'UNFULFILLED') {\n    filteredProducts = orders.filter(o => o.status === 'UNFULFILLED');\n  } else if (filter === 'RECEIVED') {\n    filteredProducts = orders.filter(o => o.status === 'RECEIVED');\n  } else if (filter === 'CANCELLED') {\n    filteredProducts = orders.filter(o => o.status === 'FULFILLED');\n  } else if (filter === 'ALL') {\n    filteredProducts = orders;\n  }\n  return filteredProducts.map(o => {\n    return {\n      Id: o.id,\n      Supplier: o.name,\n      Warehouse: o.label,\n      OrderDate: new Date(o.order_date).toDateString(),\n      Status: o.status,\n      Tax: o.tax,\n      Address: o.address1,\n      SupplierId: o.supplier_id,\n      WarehouseId: o.location_id\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Purchase Orders",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "6422bd81c5f658261106244b_64bfb8abab30652c8fc88cdc"
+}

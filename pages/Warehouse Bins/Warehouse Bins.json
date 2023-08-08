@@ -28,7 +28,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Warehouse Bins_Pres_HANDLERPAGE.handle_OnPageLoad",
               "name": "Pres_HANDLERPAGE.handle_OnPageLoad",
               "collectionId": "Warehouse Bins_Pres_HANDLERPAGE",
               "confirmBeforeExecute": false,

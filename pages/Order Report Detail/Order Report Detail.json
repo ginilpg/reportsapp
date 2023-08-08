@@ -28,7 +28,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Order Report Detail_Pres_HANDLERPAGE.handle_OnPageLoad",
               "name": "Pres_HANDLERPAGE.handle_OnPageLoad",
               "collectionId": "Order Report Detail_Pres_HANDLERPAGE",
               "confirmBeforeExecute": false,

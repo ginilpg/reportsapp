@@ -1,0 +1,38 @@
+{
+    "boxShadow": "none",
+    "widgetName": "inc_closePurchaseOrder",
+    "onClick": "{{closeModal('mdl_addPurchaseOrder');\nstoreValue('supplier', null);\nstoreValue('warehouse', null);\nstoreValue('supplierProducts', null);\nstoreValue('purchaseOrderProducts', null);\n}}",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "dynamicPropertyPathList": [{"key": "onClick"}],
+    "displayName": "Icon Button",
+    "iconSVG": "/static/media/icon.1a0c634ac75f9fa6b6ae7a8df882a3ba.svg",
+    "searchTags": [
+        "click",
+        "submit"
+    ],
+    "topRow": 0,
+    "bottomRow": 4,
+    "type": "ICON_BUTTON_WIDGET",
+    "hideCard": false,
+    "animateLoading": true,
+    "dynamicTriggerPathList": [{"key": "onClick"}],
+    "leftColumn": 60,
+    "dynamicBindingPathList": [
+        {"key": "buttonColor"},
+        {"key": "borderRadius"}
+    ],
+    "iconSize": 24,
+    "isDisabled": false,
+    "key": "x360xtsh0p",
+    "isDeprecated": false,
+    "rightColumn": 63,
+    "iconName": "cross",
+    "widgetId": "nvkbqpq678",
+    "isVisible": true,
+    "version": 1,
+    "parentId": "9bohu8jrm7",
+    "renderMode": "CANVAS",
+    "isLoading": false,
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "buttonVariant": "TERTIARY"
+}

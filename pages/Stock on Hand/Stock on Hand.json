@@ -28,7 +28,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Stock on Hand_pres_PageLoad.onPageLoad",
               "name": "pres_PageLoad.onPageLoad",
               "collectionId": "Stock on Hand_pres_PageLoad",
               "confirmBeforeExecute": false,
@@ -39,7 +38,6 @@
               "timeoutInMillisecond": 10000
             },
             {
-              "id": "Stock on Hand_pres_Pagination.setPaginationDefaults",
               "name": "pres_Pagination.setPaginationDefaults",
               "collectionId": "Stock on Hand_pres_Pagination",
               "confirmBeforeExecute": false,

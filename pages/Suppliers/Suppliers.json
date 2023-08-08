@@ -1,0 +1,68 @@
+{
+  "unpublishedPage": {
+    "name": "Suppliers",
+    "slug": "suppliers",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 970,
+          "containerStyle": "none",
+          "snapRows": 95,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 77,
+          "minHeight": 970,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Suppliers_utils.getSupplierProducts",
+              "name": "utils.getSupplierProducts",
+              "collectionId": "Suppliers_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async supplierId => {\n  const products = await getSupplierProducts.run({\n    supplierId\n  });\n  return products.map(p => {\n    return {\n      Id: p.id,\n      Name: p.name,\n      Price: p.price,\n      Description: p.description,\n      Image: p.image,\n      Sku: p.sku\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Suppliers_utils.getSuppliers",
+              "name": "utils.getSuppliers",
+              "collectionId": "Suppliers_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const suppliers = await getSuppliers.run();\n  return suppliers.map(s => {\n    return {\n      Id: s.id,\n      Name: s.name,\n      Email: s.email,\n      Phone: s.phone,\n      Address: s.address\n    };\n  });\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Suppliers",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": true
+  },
+  "deleted": false,
+  "gitSyncId": "6422bd81c5f658261106244b_64bfb8abab30652c8fc88ce3"
+}
